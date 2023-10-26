@@ -1,0 +1,77 @@
+.parkingpage{
+    padding-top: 20px;
+    margin: 0px;
+    background-color: #d2b746;
+    height: 100vh;
+
+}
+
+.parkingSpotsContanier{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-image:url("../Assets/6379831.jpg");
+    background-repeat: no-repeat;
+    background-size: 394px auto;
+    padding: 0px;
+}
+#parkingHeader{
+    font-size: 1.6em;
+    font-family: "Libre Baskerville",'Times New Roman', Times, serif;
+    font-weight: 700;
+    margin: 0px;
+}
+.occupiedImg{
+border: none;
+height: 130px;
+width: 70px;
+}
+.occupiedSpace{
+    transform: rotate(90deg);
+    list-style: none;
+    border-radius: 10px;
+    height: 130px;
+    width: 70px;
+    background-color: tomato;
+}
+.parkingDots{
+border-top: solid darkblue;
+border-bottom: solid darkblue;
+height: 150px;
+}
+.freeparkingspot{
+    transform: rotate(90deg);
+    list-style: none;
+    border-radius: 10px;
+    height: 130px;
+    width: 70px;
+    background-color: rgb(5, 154, 42);
+
+}
+
+@media screen and (max-width: 10000px) {
+    .parkingpage {
+      background-color: lightgreen;
+    }
+    .parkingSpotsContanier{
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        background-position: center;
+        height: 100%;
+        background-color: aqua;
+        background-size: 80vw 100vh;
+    }
+  }
+
+  @media screen and (max-width:400px) {
+    .parkingpage {
+      background-color: rgb(224, 134, 30);
+    }
+    .parkingSpotsContanier{
+        background-size: 394px auto;
+        height: 800px;
+        overflow-y: scroll;
+        padding: 0px;
+    }
+  }
