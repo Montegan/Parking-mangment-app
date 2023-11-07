@@ -5,21 +5,21 @@ function Parkingmain() {
   const [availablecars, setAvailablecars] = useState([]);
 
 
-  // useEffect(async () => {
-  //    axios
-  //     .get("http://localhost:4000/reservaions")
-  //     .then((res) => setAvailablecars(res.data[res.data.length - 30]))
-  //     .catch((err) => console.log(err))
-  // }, []);
+  useEffect(()=>{
+     axios
+      .get("http://localhost:4000/reservaions")
+      .then((res) => setAvailablecars(res.data[res.data.length - 1]))
+      .catch((err) => console.log(err))}
+  , []);
 
-  setTimeout(
-    () =>
-    axios
-        .get("http://localhost:4000/reservaions")
-        .then((res) => setAvailablecars(res.data[res.data.length - 1]))
-        .catch((err) => console.log(err)),
-    10000
-    );
+  // setTimeout(
+  //   () =>
+  //   axios
+  //       .get("http://localhost:4000/reservaions")
+  //       .then((res) => setAvailablecars(res.data[res.data.length - 1]))
+  //       .catch((err) => console.log(err)),
+  //   1000
+  //   );
 
     const Parkvalues = Object.values(availablecars);
     const keys = Object.keys(availablecars);
@@ -56,13 +56,7 @@ function Parkingmain() {
     "a3",
     "a4",
     "a5",
-    "a6",
-    "a7",
-    "a8",
-    "a9",
-    "a10",
-    "a11",
-    "a12",
+    "a6"
   ];
   return (
     <div className="parkingpage">
@@ -71,21 +65,21 @@ function Parkingmain() {
         {Parkvalues.length === 0 ? Temp.map((nums)=> <li key= {nums} className="freeparkingspot"></li>)
          : (
           Parkvalues.map((vals, idx) => {
-            if (vals == 0 || vals == 1) {
+            if (vals === 0 || vals === 1) {
               return (
                 <div className="parkingDots">
                 <li
-                  className={vals == 0 ? "occupiedSpace" : "freeparkingspot"}
+                  className={vals === 0 ? "freeparkingspot" : "occupiedSpace" }
                   key={idx}
                 >
-                  {vals == 0 ? (
+                  {vals === 0 ? (
+                    ""
+                  ) : (
                     <img
                       className="occupiedImg"
                       src={require("../Assets/Bluecar.png")}
                     />
-                  ) : (
-                    ""
-                  )}
+                  ) }
                 </li></div>
               );
             }

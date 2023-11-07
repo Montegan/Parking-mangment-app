@@ -1,77 +1,84 @@
 .parkingpage{
-    padding-top: 20px;
     margin: 0px;
-    background-color: #d2b746;
+    background-image:url("../Assets/6379831.jpg");
+    background-repeat: no-repeat;
+    background-size:100vw auto;
     height: 100vh;
-
+    overflow-y: scroll;
 }
 
 .parkingSpotsContanier{
+    margin: 0px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    background-image:url("../Assets/6379831.jpg");
-    background-repeat: no-repeat;
-    background-size: 394px auto;
+    position: relative;
+    top:200px;
+   left: 3px;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 130px;
+    row-gap: 30px;
+    height: 60vw;
+    transform: rotate(90deg);
     padding: 0px;
 }
 #parkingHeader{
     font-size: 1.6em;
+    position:sticky;
+    top:0px;
+    z-index: 100;
+    background-color: gold;
+    padding: 10px;
+    text-align: left;
     font-family: "Libre Baskerville",'Times New Roman', Times, serif;
     font-weight: 700;
     margin: 0px;
+    text-align: center;
 }
 .occupiedImg{
 border: none;
-height: 130px;
-width: 70px;
+height: 160px;
+width: 90px;
 }
 .occupiedSpace{
-    transform: rotate(90deg);
+
     list-style: none;
     border-radius: 10px;
-    height: 130px;
-    width: 70px;
+    height: 160px;
+    width: 90px;
     background-color: tomato;
 }
 .parkingDots{
-border-top: solid darkblue;
-border-bottom: solid darkblue;
-height: 150px;
+border-left: dashed 3px rgb(248, 248, 250);
+border-right: dashed 3px rgb(244, 244, 245);
+padding: 0px 10px;
+height: 160px;
+width: 100px;
 }
 .freeparkingspot{
-    transform: rotate(90deg);
     list-style: none;
     border-radius: 10px;
-    height: 130px;
-    width: 70px;
+    height: 160px;
+    width: 90px;
     background-color: rgb(5, 154, 42);
 
 }
 
-@media screen and (max-width: 10000px) {
-    .parkingpage {
-      background-color: lightgreen;
-    }
+@media screen and (min-width: 1000px) {
     .parkingSpotsContanier{
-        justify-content: center;
-        grid-template-columns: 1fr 1fr;
-        background-position: center;
-        height: 100%;
-        background-color: aqua;
-        background-size: 80vw 100vh;
+        column-gap: 0px;
+        top:0px;
+        left: 390px;
+        height: 70vw;
+        width: 100vh;
     }
+    .parkingDots{
+        height: 160px;
+        }
   }
 
-  @media screen and (max-width:400px) {
-    .parkingpage {
-      background-color: rgb(224, 134, 30);
-    }
+  @media screen and (max-height:700px) {
     .parkingSpotsContanier{
-        background-size: 394px auto;
-        height: 800px;
-        overflow-y: scroll;
-        padding: 0px;
+        top:160px;
+        column-gap: 80px;
     }
   }
