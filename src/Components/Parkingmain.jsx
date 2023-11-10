@@ -5,21 +5,21 @@ function Parkingmain() {
   const [availablecars, setAvailablecars] = useState([]);
 
 
-  useEffect(()=>{
-     axios
-      .get("http://localhost:4000/reservaions")
-      .then((res) => setAvailablecars(res.data[res.data.length - 1]))
-      .catch((err) => console.log(err))}
-  , []);
+  // useEffect(()=>{
+  //    axios
+  //     .get("http://localhost:4000/reservaions")
+  //     .then((res) => setAvailablecars(res.data[res.data.length - 1]))
+  //     .catch((err) => console.log(err))}
+  // , []);
 
-  // setTimeout(
-  //   () =>
-  //   axios
-  //       .get("http://localhost:4000/reservaions")
-  //       .then((res) => setAvailablecars(res.data[res.data.length - 1]))
-  //       .catch((err) => console.log(err)),
-  //   1000
-  //   );
+  setTimeout(
+    () =>
+    axios
+        .get("http://localhost:4000/reservaions")
+        .then((res) => setAvailablecars(res.data[res.data.length - 1]))
+        .catch((err) => console.log(err)),
+    1000
+    );
 
     const Parkvalues = Object.values(availablecars);
     const keys = Object.keys(availablecars);
