@@ -15,7 +15,7 @@ function Parkingmain() {
   setTimeout(
     () =>
     axios
-        .get("http://localhost:4000/reservaions")
+        .get("https://parkingbackend-qesh.onrender.com/reservaions")
         .then((res) => setAvailablecars(res.data[res.data.length - 1]))
         .catch((err) => console.log(err)),
     1000
@@ -25,7 +25,7 @@ function Parkingmain() {
     const keys = Object.keys(availablecars);
 
   if (keys.length === 12){
-    axios.delete("http://localhost:4000/deletefirst")
+    axios.delete("https://parkingbackend-qesh.onrender.com/deletefirst")
     .then((response) => {
       console.log(response.data);
     })
