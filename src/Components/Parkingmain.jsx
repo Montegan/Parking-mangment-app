@@ -16,7 +16,7 @@ function Parkingmain() {
     () =>
     axios
         .get("https://parkingbackend-qesh.onrender.com/reservaions")
-        .then((res) => setAvailablecars(res.data[res.data.length - 1]))
+        .then((res) => setAvailablecars(res.data[res.data.length - 130]))
         .catch((err) => console.log(err)),
     1000
     );
@@ -24,7 +24,7 @@ function Parkingmain() {
     const Parkvalues = Object.values(availablecars);
     const keys = Object.keys(availablecars);
 
-  if (keys.length === 12){
+  if (keys.length === 13){
     axios.delete("https://parkingbackend-qesh.onrender.com/deletefirst")
     .then((response) => {
       console.log(response.data);
@@ -56,24 +56,27 @@ function Parkingmain() {
     "a3",
     "a4",
     "a5",
-    "a6"
+    "a6",
+    "a7",
+    "a8",
+    "a9"
   ];
   return (
     <div className="parkingpage">
       <h1 id="parkingHeader"> Parking Space Overview </h1>
       <ul className="parkingSpotsContanier">
-        {Parkvalues.length === 0 ? Temp.map((nums)=> <li key= {nums} className="freeparkingspot"></li>)
+        {Parkvalues.length === 0 ? Temp.map((nums)=> <li key= {nums} className= "freeparkingspotrender" ></li>)
          : (
           Parkvalues.map((vals, idx) => {
             if (vals === 0 || vals === 1) {
               return (
                 <div className="parkingDots">
                 <li
-                  className={vals === 0 ? "freeparkingspot" : "occupiedSpace" }
+                  className={vals === 0 ? `freeparkingspot${idx}` : `occupiedSpace${idx}` }
                   key={idx}
                 >
                   {vals === 0 ? (
-                    ""
+                    idx
                   ) : (
                     <img
                       className="occupiedImg"
