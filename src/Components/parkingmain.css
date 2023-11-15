@@ -70,8 +70,9 @@
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-    top: 15px;
-    right: 60vw;
+    position: relative;
+    top:150px;
+    right: 50px;
     height: 90px;
     width: 140px;
     background-color: tomato;
@@ -81,9 +82,9 @@
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-position: relative;
-top:140px;  
-right: 320px;
+    position: relative;
+    top:140px;
+    right: 320px;
     height: 90px;
     width: 140px;
     background-color: tomato;
@@ -93,7 +94,9 @@ right: 320px;
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-
+    position: relative;
+    top:250px;
+    right: 130px;
     height: 90px;
     width: 140px;
     background-color: tomato;
@@ -103,7 +106,9 @@ right: 320px;
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-
+    position: relative;
+    top:300px ;
+    right: 400px;
     height: 90px;
     width: 140px;
     background-color: tomato;
@@ -113,7 +118,9 @@ right: 320px;
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-
+    position: relative;
+    bottom: 280px;
+    left: 400px;
     height: 90px;
     width: 140px;
     background-color: tomato;
@@ -123,7 +130,9 @@ right: 320px;
     list-style: none;
     border-radius: 10px;
     transform: rotate(0deg);
-
+    position: relative;
+    bottom: 250px;
+    left: 145px;
     height: 90px;
     width: 140px;
     background-color: tomato;

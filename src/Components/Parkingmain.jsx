@@ -16,7 +16,7 @@ function Parkingmain() {
     () =>
     axios
         .get("https://parkingbackend-qesh.onrender.com/reservaions")
-        .then((res) => setAvailablecars(res.data[res.data.length - 130]))
+        .then((res) => setAvailablecars(res.data[res.data.length -1]))
         .catch((err) => console.log(err)),
     1000
     );
